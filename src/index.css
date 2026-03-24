@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-base: #080808;
+  --color-bg-surface: #111111;
+  --color-bg-elevated: #1A1A1A;
+  --color-gold: #C9A84C;
+  --color-gold-light: #E8C96A;
+  --color-gold-dim: rgba(201,168,76,0.12);
+  --color-gold-border: rgba(201,168,76,0.25);
+  --color-text-primary: #F0EDE6;
+  --color-text-secondary: #999990;
+  --color-text-muted: #555550;
+  --color-success: #4A7C59;
+  --color-danger: #7C4A4A;
+  --color-warning: #7C6A2A;
+
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Jost", sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-border);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Selection */
+::selection {
+  background: rgba(201,168,76,0.3);
+  color: white;
+}
+
+/* Date/time input styling for webkit */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.7) sepia(1) saturate(3) hue-rotate(15deg);
+  cursor: pointer;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  nav, footer, .btn-ghost, .btn-primary {
+    display: none !important;
+  }
+  
+  .border-gold {
+    border-color: #333 !important;
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold text-[#080808] px-9 py-3.5 font-sans font-medium text-[12px] tracking-[2px] uppercase transition-colors duration-200 hover:bg-gold-light;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-gold border border-gold-border px-9 py-3.5 font-sans font-medium text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:border-gold hover:bg-gold-dim;
+  }
+
+  .section-title {
+    @apply uppercase tracking-[3px] text-[11px] text-gold font-sans font-normal;
+  }
+
+  .heading-large {
+    @apply font-serif text-[42px] lg:text-[64px] font-normal leading-[1.1] text-text-primary;
+  }
+
+  .input-standard {
+    @apply bg-bg-elevated border border-gold-border text-text-primary px-4 py-3 font-sans text-sm focus:outline-none focus:ring-1 focus:ring-gold;
+  }
+}
+
+.sharp-border {
+  border: 1px solid var(--color-gold-border);
+}
+
+.gold-divider {
+  border-bottom: 1px solid var(--color-gold-border);
+}
+
+.gold-divider-v {
+  border-right: 1px solid var(--color-gold-border);
+}
