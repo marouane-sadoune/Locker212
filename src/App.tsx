@@ -71,7 +71,7 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
             className="text-accent font-sans font-medium text-[13px] tracking-[4px] cursor-pointer hover:text-accent-light transition-colors"
             onClick={() => setActivePage('home')}
           >
-            DROP VAULT
+            Locker212
           </div>
 
           {/* Desktop Nav */}
