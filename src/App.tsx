@@ -68,7 +68,7 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
       )}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div 
-            className="text-gold font-sans font-medium text-[13px] tracking-[4px] cursor-pointer hover:text-accent-light transition-colors"
+            className="text-accent font-sans font-medium text-[13px] tracking-[4px] cursor-pointer hover:text-accent-light transition-colors"
             onClick={() => setActivePage('home')}
           >
             DROP VAULT
@@ -82,14 +82,14 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
                 onClick={() => setActivePage(page)}
                 className={cn(
                   "font-sans font-light text-[12px] tracking-[1px] uppercase transition-colors relative",
-                  activePage === page ? "text-gold" : "text-text-secondary hover:text-gold"
+                  activePage === page ? "text-accent" : "text-text-secondary hover:text-accent"
                 )}
               >
                 {page}
                 {activePage === page && (
                   <motion.div 
                     layoutId="nav-underline"
-                    className="absolute -bottom-1 left-0 w-full h-[1px] bg-gold"
+                    className="absolute -bottom-1 left-0 w-full h-[1px] bg-accent"
                   />
                 )}
               </button>
@@ -99,7 +99,7 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden text-gold hover:text-accent-light transition-colors"
+            className="md:hidden text-accent hover:text-accent-light transition-colors"
           >
             <Menu size={24} />
           </button>
@@ -168,7 +168,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
         {/* Animated background grid */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
           <div className="absolute inset-0" style={{
-            backgroundImage: `linear-gradient(var(--color-gold) 1px, transparent 1px), linear-gradient(90deg, var(--color-gold) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(var(--color-accent) 1px, transparent 1px), linear-gradient(90deg, var(--color-accent) 1px, transparent 1px)`,
             backgroundSize: '60px 60px'
           }} />
         </div>
@@ -181,10 +181,10 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             className="z-10"
           >
             <span className="section-title">LUGGAGE STORAGE · MOROCCO</span>
-            <div className="w-10 h-[1px] bg-gold my-4" />
+            <div className="w-10 h-[1px] bg-accent my-4" />
             <h1 className="heading-large mb-6">
               Leave your bags.<br />
-              <span className="text-gold/80">Own your day.</span>
+              <span className="text-accent/80">Own your day.</span>
             </h1>
             <p className="font-sans font-light text-[16px] text-text-secondary leading-[1.8] max-w-md mb-8">
               Secure, flexible locker storage for travelers who refuse to be slowed down. 
@@ -212,15 +212,15 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             {/* Quick trust indicators */}
             <div className="flex items-center gap-6 mt-10 pt-10 border-t border-accent-border/30">
               <div className="flex items-center gap-2">
-                <Shield size={16} className="text-gold" />
+                <Shield size={16} className="text-accent" />
                 <span className="text-text-secondary text-xs">Insured Storage</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star size={16} className="text-gold" fill="#F97316" />
+                <Star size={16} className="text-accent" fill="#F97316" />
                 <span className="text-text-secondary text-xs">4.9/5 Rating</span>
               </div>
               <div className="flex items-center gap-2">
-                <Briefcase size={16} className="text-gold" />
+                <Briefcase size={16} className="text-accent" />
                 <span className="text-text-secondary text-xs">5000+ Bags Stored</span>
               </div>
             </div>
@@ -232,7 +232,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="hidden lg:flex flex-col items-end relative"
           >
-            <div className="font-serif text-[220px] text-gold/5 leading-none absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none">
+            <div className="font-serif text-[220px] text-accent/5 leading-none absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none">
               24
             </div>
             <div className="space-y-0 w-full max-w-[300px] border-y border-accent-border bg-bg-surface/30 backdrop-blur-sm px-6">
@@ -248,7 +248,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
                   transition={{ delay: 0.4 + i * 0.1 }}
                   className={cn("py-5 font-sans font-light text-text-secondary text-sm flex items-center gap-3", i < 2 && "border-b border-accent-border")}
                 >
-                  <item.icon size={16} className="text-gold" />
+                  <item.icon size={16} className="text-accent" />
                   {item.text}
                 </motion.div>
               ))}
@@ -267,7 +267,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-[1px] h-8 bg-gradient-to-b from-gold to-transparent"
+            className="w-[1px] h-8 bg-gradient-to-b from-accent to-transparent"
           />
         </motion.div>
       </section>
@@ -302,11 +302,11 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
               { num: "03", title: "Explore the city", desc: "Come back anytime during opening hours to collect." }
             ].map((step, i) => (
               <StaggerItem key={i} className={cn("p-10 relative group hover:bg-bg-elevated transition-colors", i !== 2 && "md:border-r md:border-accent-border border-b md:border-b-0 border-accent-border")}>
-                <div className="font-serif text-6xl text-gold/10 group-hover:text-gold/20 transition-colors mb-6">{step.num}</div>
+                <div className="font-serif text-6xl text-accent/10 group-hover:text-accent/20 transition-colors mb-6">{step.num}</div>
                 <h3 className="font-serif text-2xl text-text-primary mb-4">{step.title}</h3>
                 <p className="font-sans font-light text-sm text-text-secondary leading-relaxed">{step.desc}</p>
                 {i < 2 && (
-                  <ChevronRight className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 text-gold/30" size={24} />
+                  <ChevronRight className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 text-accent/30" size={24} />
                 )}
               </StaggerItem>
             ))}
@@ -333,15 +333,15 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
                   <span className="font-sans font-light text-text-secondary ml-2 text-sm uppercase tracking-widest">MAD / day</span>
                 </div>
                 <ul className="space-y-4 mb-10 flex-grow font-sans font-light text-xs text-text-secondary">
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-gold" /> Up to 1 small bag</li>
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-gold" /> Max 24 hours</li>
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-gold" /> Secure code lock</li>
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-gold" /> Basic insurance included</li>
+                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Up to 1 small bag</li>
+                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Max 24 hours</li>
+                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Secure code lock</li>
+                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Basic insurance included</li>
                 </ul>
                 <motion.button 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="btn-ghost w-full group-hover:border-gold" 
+                  className="btn-ghost w-full group-hover:border-accent" 
                   onClick={() => onBook('SMALL')}
                 >
                   RESERVE SMALL
@@ -351,19 +351,19 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
 
             {/* Standard */}
             <StaggerItem>
-              <div className="border-2 border-gold relative p-10 flex flex-col h-full bg-bg-base hover:bg-bg-elevated transition-colors group">
-                <div className="absolute top-0 right-0 bg-accent-dim text-gold text-[10px] px-3 py-1 font-sans font-medium uppercase tracking-widest">MOST REQUESTED</div>
+              <div className="border-2 border-accent relative p-10 flex flex-col h-full bg-bg-base hover:bg-bg-elevated transition-colors group">
+                <div className="absolute top-0 right-0 bg-accent-dim text-accent text-[10px] px-3 py-1 font-sans font-medium uppercase tracking-widest">MOST REQUESTED</div>
                 <span className="section-title mb-2">STANDARD</span>
                 <p className="font-sans font-light text-text-secondary text-sm mb-8">Carry-on · Cabin luggage · Medium bag</p>
                 <div className="mb-8">
-                  <span className="font-serif text-5xl text-gold">35</span>
+                  <span className="font-serif text-5xl text-accent">35</span>
                   <span className="font-sans font-light text-text-secondary ml-2 text-sm uppercase tracking-widest">MAD / day</span>
                 </div>
                 <ul className="space-y-4 mb-10 flex-grow font-sans font-light text-xs text-text-secondary">
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-gold" /> Up to 1 medium suitcase</li>
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-gold" /> Max 24 hours</li>
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-gold" /> Secure code lock</li>
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-gold" /> Basic insurance included</li>
+                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Up to 1 medium suitcase</li>
+                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Max 24 hours</li>
+                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Secure code lock</li>
+                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Basic insurance included</li>
                 </ul>
                 <motion.button 
                   whileHover={{ scale: 1.02 }}
@@ -386,15 +386,15 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
                   <span className="font-sans font-light text-text-secondary ml-2 text-sm uppercase tracking-widest">MAD / day</span>
                 </div>
                 <ul className="space-y-4 mb-10 flex-grow font-sans font-light text-xs text-text-secondary">
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-gold" /> Up to 1 large suitcase</li>
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-gold" /> Max 24 hours</li>
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-gold" /> Secure code lock</li>
-                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-gold" /> Basic insurance included</li>
+                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Up to 1 large suitcase</li>
+                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Max 24 hours</li>
+                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Secure code lock</li>
+                  <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Basic insurance included</li>
                 </ul>
                 <motion.button 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="btn-ghost w-full group-hover:border-gold" 
+                  className="btn-ghost w-full group-hover:border-accent" 
                   onClick={() => onBook('LARGE')}
                 >
                   RESERVE LARGE
@@ -411,7 +411,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             className="mt-12 text-center"
           >
             <p className="text-text-secondary font-sans font-light text-sm">
-              Need multi-day storage? <span className="text-gold">10% off</span> for 3+ days · <span className="text-gold">20% off</span> for 7+ days
+              Need multi-day storage? <span className="text-accent">10% off</span> for 3+ days · <span className="text-accent">20% off</span> for 7+ days
             </p>
           </motion.div>
         </div>
@@ -432,17 +432,17 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
               { name: "Tyler B.", country: "🇺🇸", quote: "Would definitely use again on my next trip to Morocco.", rating: 5 }
             ].map((review, i) => (
               <StaggerItem key={i}>
-                <div className="border border-accent-border p-6 bg-bg-surface flex flex-col justify-between h-full hover:border-gold transition-colors">
+                <div className="border border-accent-border p-6 bg-bg-surface flex flex-col justify-between h-full hover:border-accent transition-colors">
                   <div>
                     <div className="flex gap-0.5 mb-4">
                       {Array.from({ length: review.rating }).map((_, j) => (
-                        <Star key={j} size={12} className="text-gold" fill="#F97316" />
+                        <Star key={j} size={12} className="text-accent" fill="#F97316" />
                       ))}
                     </div>
                     <p className="font-sans font-light text-sm text-text-secondary italic leading-relaxed">"{review.quote}"</p>
                   </div>
                   <div className="flex items-center justify-between mt-6">
-                    <span className="text-gold font-sans text-xs tracking-widest uppercase">{review.name}</span>
+                    <span className="text-accent font-sans text-xs tracking-widest uppercase">{review.name}</span>
                     <span className="text-xl">{review.country}</span>
                   </div>
                 </div>
@@ -469,7 +469,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             <span className="section-title block mb-6">READY TO EXPLORE?</span>
             <h2 className="font-serif text-4xl md:text-5xl text-text-primary mb-6">
               Drop your bags.<br />
-              <span className="text-gold">Own your adventure.</span>
+              <span className="text-accent">Own your adventure.</span>
             </h2>
             <p className="text-text-secondary font-sans font-light mb-10 max-w-md mx-auto">
               Book your secure locker in under 2 minutes. Receive instant WhatsApp confirmation.
@@ -491,7 +491,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div>
-              <div className="text-gold font-sans font-medium text-[13px] tracking-[4px] mb-4">DROP VAULT</div>
+              <div className="text-accent font-sans font-medium text-[13px] tracking-[4px] mb-4">DROP VAULT</div>
               <p className="text-text-secondary font-sans font-light text-sm leading-relaxed">
                 Premium luggage storage in the heart of Marrakech. Leave your bags, own your day.
               </p>
@@ -499,16 +499,16 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             <div>
               <h4 className="section-title mb-4">QUICK LINKS</h4>
               <ul className="space-y-2 text-text-secondary text-sm font-sans font-light">
-                <li><a href="#" className="hover:text-gold transition-colors">Home</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Book Now</a></li>
-                <li><a href="#pricing" className="hover:text-gold transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">FAQ</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Home</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Book Now</a></li>
+                <li><a href="#pricing" className="hover:text-accent transition-colors">Pricing</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">FAQ</a></li>
               </ul>
             </div>
             <div>
               <h4 className="section-title mb-4">CONTACT</h4>
               <ul className="space-y-2 text-text-secondary text-sm font-sans font-light">
-                <li>WhatsApp: <span className="text-gold">+212 600 000 000</span></li>
+                <li>WhatsApp: <span className="text-accent">+212 600 000 000</span></li>
                 <li>Email: hello@dropvault.ma</li>
                 <li>Marrakech Medina, Morocco</li>
               </ul>
@@ -526,8 +526,8 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
               © 2025 DropVault · All rights reserved
             </div>
             <div className="flex gap-6 text-text-muted text-xs">
-              <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-gold transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-accent transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
@@ -659,7 +659,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.5, type: 'spring' }}
               >
-                <Check className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gold w-10 h-10" />
+                <Check className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-accent w-10 h-10" />
               </motion.div>
             </div>
             <h2 className="font-serif text-[42px] md:text-[48px] text-text-primary mb-4">Reservation confirmed.</h2>
@@ -673,22 +673,22 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="border border-gold p-8 mb-8 bg-accent-dim/5 max-w-md w-full"
+            className="border border-accent p-8 mb-8 bg-accent-dim/5 max-w-md w-full"
           >
             <div className="flex flex-col md:flex-row items-center gap-6">
               <QRCode value={bookingCode} size={100} />
               <div className="text-center md:text-left flex-grow">
                 <div className="text-text-muted text-[10px] uppercase tracking-[4px] mb-2">Booking Code</div>
-                <div className="font-mono text-[28px] md:text-[32px] text-gold tracking-[6px] uppercase mb-4">{bookingCode}</div>
+                <div className="font-mono text-[28px] md:text-[32px] text-accent tracking-[6px] uppercase mb-4">{bookingCode}</div>
                 <div className="flex gap-2 justify-center md:justify-start">
-                  <button onClick={handleCopyCode} className="p-2 border border-accent-border hover:border-gold transition-colors" title="Copy code">
-                    <Copy size={16} className="text-gold" />
+                  <button onClick={handleCopyCode} className="p-2 border border-accent-border hover:border-accent transition-colors" title="Copy code">
+                    <Copy size={16} className="text-accent" />
                   </button>
-                  <button onClick={handlePrint} className="p-2 border border-accent-border hover:border-gold transition-colors" title="Print">
-                    <Printer size={16} className="text-gold" />
+                  <button onClick={handlePrint} className="p-2 border border-accent-border hover:border-accent transition-colors" title="Print">
+                    <Printer size={16} className="text-accent" />
                   </button>
-                  <button onClick={handleShare} className="p-2 border border-accent-border hover:border-gold transition-colors" title="Share">
-                    <Share2 size={16} className="text-gold" />
+                  <button onClick={handleShare} className="p-2 border border-accent-border hover:border-accent transition-colors" title="Share">
+                    <Share2 size={16} className="text-accent" />
                   </button>
                 </div>
               </div>
@@ -721,8 +721,8 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                 <span className="text-text-primary">{formData.days} day{formData.days > 1 ? 's' : ''}</span>
               </div>
               <div className="flex justify-between pt-3 border-t border-accent-border/30">
-                <span className="text-gold">Total</span>
-                <span className="text-gold font-serif text-lg">{total} MAD</span>
+                <span className="text-accent">Total</span>
+                <span className="text-accent font-serif text-lg">{total} MAD</span>
               </div>
             </div>
           </motion.div>
@@ -775,7 +775,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
         >
           <div className="font-sans font-light text-text-muted text-xs tracking-widest mb-4">Home / Book</div>
           <h1 className="font-serif text-4xl md:text-5xl text-text-primary mb-4">Make a Reservation</h1>
-          <div className="w-[60px] h-[1px] bg-gold" />
+          <div className="w-[60px] h-[1px] bg-accent" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
@@ -791,7 +791,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
                     <label className="text-text-secondary text-[10px] uppercase tracking-widest flex items-center gap-2">
-                      <User size={12} className="text-gold" />
+                      <User size={12} className="text-accent" />
                       Full Name
                     </label>
                     <input 
@@ -805,7 +805,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-text-secondary text-[10px] uppercase tracking-widest flex items-center gap-2">
-                      <MessageSquare size={12} className="text-gold" />
+                      <MessageSquare size={12} className="text-accent" />
                       WhatsApp Number
                     </label>
                     <input 
@@ -837,10 +837,10 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       onClick={() => setFormData({...formData, size: size.id as LockerSize})}
                       className={cn(
                         "p-6 border cursor-pointer transition-all duration-300 relative group",
-                        formData.size === size.id ? "border-gold bg-accent-dim" : "border-accent-border hover:bg-bg-elevated"
+                        formData.size === size.id ? "border-accent bg-accent-dim" : "border-accent-border hover:bg-bg-elevated"
                       )}
                     >
-                      {formData.size === size.id && <Check className="absolute top-4 right-4 text-gold w-4 h-4" />}
+                      {formData.size === size.id && <Check className="absolute top-4 right-4 text-accent w-4 h-4" />}
                       <div className="section-title text-[9px] mb-2">{size.name}</div>
                       <div className="font-serif text-2xl text-text-primary mb-1">{size.price} MAD</div>
                       <div className="font-sans font-light text-text-secondary text-[11px] leading-snug">{size.desc}</div>
@@ -859,7 +859,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   <div className="flex flex-col gap-2">
                     <label className="text-text-secondary text-[10px] uppercase tracking-widest flex items-center gap-2">
-                      <Calendar size={12} className="text-gold" />
+                      <Calendar size={12} className="text-accent" />
                       Drop-off date
                     </label>
                     <input 
@@ -872,7 +872,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-text-secondary text-[10px] uppercase tracking-widest flex items-center gap-2">
-                      <Clock size={12} className="text-gold" />
+                      <Clock size={12} className="text-accent" />
                       Approx. Time
                     </label>
                     <input 
@@ -884,14 +884,14 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-text-secondary text-[10px] uppercase tracking-widest flex items-center gap-2">
-                      <Package size={12} className="text-gold" />
+                      <Package size={12} className="text-accent" />
                       Number of Bags
                     </label>
                     <div className="flex items-center border border-accent-border h-[46px]">
                       <button 
                         type="button"
                         onClick={() => setFormData({...formData, bags: Math.max(1, formData.bags - 1)})}
-                        className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-gold border-r border-accent-border transition-colors"
+                        className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-accent border-r border-accent-border transition-colors"
                       >
                         <Minus size={14} />
                       </button>
@@ -899,7 +899,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       <button 
                         type="button"
                         onClick={() => setFormData({...formData, bags: Math.min(4, formData.bags + 1)})}
-                        className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-gold border-l border-accent-border transition-colors"
+                        className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-accent border-l border-accent-border transition-colors"
                       >
                         <Plus size={14} />
                       </button>
@@ -911,7 +911,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       <button 
                         type="button"
                         onClick={() => setFormData({...formData, days: Math.max(1, formData.days - 1)})}
-                        className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-gold border-r border-accent-border transition-colors"
+                        className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-accent border-r border-accent-border transition-colors"
                       >
                         <Minus size={14} />
                       </button>
@@ -919,7 +919,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       <button 
                         type="button"
                         onClick={() => setFormData({...formData, days: Math.min(30, formData.days + 1)})}
-                        className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-gold border-l border-accent-border transition-colors"
+                        className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-accent border-l border-accent-border transition-colors"
                       >
                         <Plus size={14} />
                       </button>
@@ -996,7 +996,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
             transition={{ delay: 0.3 }}
             className="lg:col-span-5 lg:sticky lg:top-32"
           >
-            <div className="border-l-[3px] border-gold border border-accent-border p-8 bg-bg-surface/50">
+            <div className="border-l-[3px] border-accent border border-accent-border p-8 bg-bg-surface/50">
               <span className="section-title block mb-6">RESERVATION SUMMARY</span>
               <div className="space-y-4 font-sans text-sm">
                 <div className="flex justify-between items-center py-2 border-b border-accent-border/20">
@@ -1064,10 +1064,10 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                 </div>
                 
                 <div className="pt-4 flex justify-between items-baseline border-t border-accent-border/30">
-                  <span className="text-gold section-title">TOTAL</span>
+                  <span className="text-accent section-title">TOTAL</span>
                   <div className="text-right">
-                    <span className="font-serif text-[32px] text-gold">{total}</span>
-                    <span className="text-gold text-xs ml-1 font-sans">MAD</span>
+                    <span className="font-serif text-[32px] text-accent">{total}</span>
+                    <span className="text-accent text-xs ml-1 font-sans">MAD</span>
                   </div>
                 </div>
 
@@ -1183,7 +1183,7 @@ const Dashboard = () => {
           {[
             { label: 'AVAILABLE', value: metrics.FREE, color: 'text-success', trend: '+2 since yesterday', icon: '↑' },
             { label: 'OCCUPIED', value: metrics.OCCUPIED, color: 'text-[#C47A7A]', trend: '+1 since yesterday', icon: '↑' },
-            { label: 'RESERVED', value: metrics.RESERVED, color: 'text-gold', trend: '-1 since yesterday', icon: '↓' },
+            { label: 'RESERVED', value: metrics.RESERVED, color: 'text-accent', trend: '-1 since yesterday', icon: '↓' },
             { label: 'TOTAL', value: metrics.TOTAL, color: 'text-text-primary', trend: 'Capacity stable', icon: '—' }
           ].map((m, i) => (
             <StaggerItem key={i}>
@@ -1214,7 +1214,7 @@ const Dashboard = () => {
             <div className="flex gap-6 font-sans text-[10px] tracking-widest text-text-secondary uppercase">
               <div className="flex items-center gap-2"><div className="w-2 h-2 bg-success" /> FREE</div>
               <div className="flex items-center gap-2"><div className="w-2 h-2 bg-danger" /> OCCUPIED</div>
-              <div className="flex items-center gap-2"><div className="w-2 h-2 bg-gold" /> RESERVED</div>
+              <div className="flex items-center gap-2"><div className="w-2 h-2 bg-accent" /> RESERVED</div>
             </div>
           </div>
           <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-6 gap-2 md:gap-3">
@@ -1230,7 +1230,7 @@ const Dashboard = () => {
                   "aspect-square p-2 md:p-3 border transition-all cursor-pointer flex flex-col justify-between",
                   locker.status === 'FREE' && "bg-success/15 border-success/40 text-success hover:bg-success/25",
                   locker.status === 'OCCUPIED' && "bg-danger/15 border-danger/40 text-[#C47A7A] hover:bg-danger/25",
-                  locker.status === 'RESERVED' && "bg-gold/15 border-gold/40 text-gold hover:bg-gold/25",
+                  locker.status === 'RESERVED' && "bg-accent/15 border-accent/40 text-accent hover:bg-accent/25",
                 )}
               >
                 <span className="font-sans font-medium text-[10px] md:text-[11px] opacity-70">{locker.id}</span>
@@ -1264,7 +1264,7 @@ const Dashboard = () => {
                     onClick={() => setFilter(f as typeof filter)}
                     className={cn(
                       "px-3 md:px-4 text-[9px] md:text-[10px] font-sans tracking-widest transition-colors",
-                      filter === f ? "bg-gold text-bg-base" : "text-text-secondary hover:text-gold"
+                      filter === f ? "bg-accent text-bg-base" : "text-text-secondary hover:text-accent"
                     )}
                   >
                     {f}
@@ -1298,7 +1298,7 @@ const Dashboard = () => {
                       onClick={() => setSelectedBooking(b)}
                       className="border-b border-white/5 hover:bg-bg-elevated transition-colors cursor-pointer"
                     >
-                      <td className="py-4 md:py-5 text-[11px] font-mono text-gold/80">{b.code}</td>
+                      <td className="py-4 md:py-5 text-[11px] font-mono text-accent/80">{b.code}</td>
                       <td className="py-4 md:py-5 text-[12px] md:text-[13px] font-light text-text-primary">
                         {b.name} <span className="ml-1 opacity-70">{b.country}</span>
                       </td>
@@ -1308,7 +1308,7 @@ const Dashboard = () => {
                       <td className={cn(
                         "py-4 md:py-5 text-[10px] font-medium tracking-widest uppercase",
                         b.status === 'ACTIVE' && "text-[#4A9C69]",
-                        b.status === 'PENDING' && "text-gold",
+                        b.status === 'PENDING' && "text-accent",
                         b.status === 'COMPLETED' && "text-text-muted",
                       )}>
                         {b.status}
@@ -1344,10 +1344,10 @@ const Dashboard = () => {
               onClick={action.onClick}
             >
               <div className="flex justify-between items-start mb-4">
-                <action.icon size={20} className={cn(action.danger ? "text-danger" : "text-gold")} />
+                <action.icon size={20} className={cn(action.danger ? "text-danger" : "text-accent")} />
                 <span className={cn(
                   "section-title border px-3 py-1 transition-colors",
-                  action.danger ? "border-danger/30 text-danger group-hover:bg-danger/10" : "border-accent-border text-gold group-hover:bg-accent-dim"
+                  action.danger ? "border-danger/30 text-danger group-hover:bg-danger/10" : "border-accent-border text-accent group-hover:bg-accent-dim"
                 )}>
                   RUN
                 </span>
@@ -1396,7 +1396,7 @@ const Dashboard = () => {
                 <div className={cn(
                   "uppercase text-sm tracking-widest",
                   selectedBooking.status === 'ACTIVE' && "text-success",
-                  selectedBooking.status === 'PENDING' && "text-gold",
+                  selectedBooking.status === 'PENDING' && "text-accent",
                   selectedBooking.status === 'COMPLETED' && "text-text-muted",
                 )}>
                   {selectedBooking.status}
@@ -1452,7 +1452,7 @@ function AppContent() {
   }, [activePage]);
 
   return (
-    <div className="min-h-screen bg-bg-base selection:bg-gold/30 selection:text-white">
+    <div className="min-h-screen bg-bg-base selection:bg-accent/30 selection:text-white">
       <ScrollProgress />
       <Navbar activePage={activePage} setActivePage={setActivePage} />
       
@@ -1477,3 +1477,4 @@ export default function App() {
     </ToastProvider>
   );
 }
+

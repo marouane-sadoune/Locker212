@@ -60,3 +60,4 @@ export const ParallaxText: React.FC<ParallaxTextProps> = ({
     </div>
   );
 };
+

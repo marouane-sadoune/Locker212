@@ -34,7 +34,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Where are you located?",
-    answer: "We're located in the heart of Marrakech Medina, just 2 minutes walk from Jemaa el-Fnaa square. Look for our gold signage near Café de France. Full directions are sent with your WhatsApp confirmation."
+    answer: "We're located in the heart of Marrakech Medina, just 2 minutes walk from Jemaa el-Fnaa square. Look for our accent signage near Café de France. Full directions are sent with your WhatsApp confirmation."
   },
   {
     question: "What if I'm running late for pickup?",
@@ -55,9 +55,9 @@ export const FAQ: React.FC = () => {
           </h2>
         </div>
 
-        <div className="space-y-0 border border-gold-border">
+        <div className="space-y-0 border border-accent-border">
           {faqs.map((faq, index) => (
-            <div key={index} className={index !== faqs.length - 1 ? 'border-b border-gold-border' : ''}>
+            <div key={index} className={index !== faqs.length - 1 ? 'border-b border-accent-border' : ''}>
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full flex items-center justify-between p-6 text-left hover:bg-bg-elevated transition-colors group"
@@ -68,7 +68,7 @@ export const FAQ: React.FC = () => {
                   transition={{ duration: 0.2 }}
                   className="flex-shrink-0"
                 >
-                  <ChevronDown size={20} className="text-gold" />
+                  <ChevronDown size={20} className="text-accent" />
                 </motion.div>
               </button>
               
@@ -109,3 +109,4 @@ export const FAQ: React.FC = () => {
     </section>
   );
 };
+

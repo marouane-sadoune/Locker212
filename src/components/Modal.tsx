@@ -37,15 +37,15 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children, 
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.2 }}
             onClick={e => e.stopPropagation()}
-            className={`relative w-full ${sizeClasses[size]} border border-gold-border bg-bg-surface max-h-[90vh] overflow-auto`}
+            className={`relative w-full ${sizeClasses[size]} border border-accent-border bg-bg-surface max-h-[90vh] overflow-auto`}
           >
             {/* Header */}
             {title && (
-              <div className="flex items-center justify-between p-6 border-b border-gold-border">
+              <div className="flex items-center justify-between p-6 border-b border-accent-border">
                 <h3 className="font-serif text-2xl text-text-primary">{title}</h3>
                 <button
                   onClick={onClose}
-                  className="text-text-muted hover:text-gold transition-colors p-2"
+                  className="text-text-muted hover:text-accent transition-colors p-2"
                 >
                   <X size={20} />
                 </button>
@@ -62,3 +62,4 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children, 
     </AnimatePresence>
   );
 };
+

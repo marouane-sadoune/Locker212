@@ -59,7 +59,7 @@ export const FeatureGrid: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-gold-border">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-accent-border">
           {features.map((feature, i) => (
             <motion.div
               key={i}
@@ -68,13 +68,13 @@ export const FeatureGrid: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
               className={`p-8 hover:bg-bg-elevated transition-colors group ${
-                i % 4 !== 3 ? 'lg:border-r lg:border-gold-border' : ''
+                i % 4 !== 3 ? 'lg:border-r lg:border-accent-border' : ''
               } ${
-                i < 4 ? 'border-b border-gold-border' : ''
+                i < 4 ? 'border-b border-accent-border' : ''
               }`}
             >
               <feature.icon 
-                className="text-gold mb-4 group-hover:scale-110 transition-transform" 
+                className="text-accent mb-4 group-hover:scale-110 transition-transform" 
                 size={28} 
               />
               <h3 className="font-serif text-lg text-text-primary mb-2">
@@ -90,3 +90,4 @@ export const FeatureGrid: React.FC = () => {
     </section>
   );
 };
+

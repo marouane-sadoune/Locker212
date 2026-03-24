@@ -34,12 +34,12 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose, activePag
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed top-0 right-0 bottom-0 w-80 bg-bg-surface border-l border-gold-border z-[85] flex flex-col"
+            className="fixed top-0 right-0 bottom-0 w-80 bg-bg-surface border-l border-accent-border z-[85] flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gold-border">
-              <span className="text-gold font-sans font-medium text-[13px] tracking-[4px]">MENU</span>
-              <button onClick={onClose} className="text-text-muted hover:text-gold transition-colors">
+            <div className="flex items-center justify-between p-6 border-b border-accent-border">
+              <span className="text-accent font-sans font-medium text-[13px] tracking-[4px]">MENU</span>
+              <button onClick={onClose} className="text-text-muted hover:text-accent transition-colors">
                 <X size={24} />
               </button>
             </div>
@@ -53,8 +53,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose, activePag
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
                   onClick={() => handleNavigate(page)}
-                  className={`block w-full text-left py-4 font-serif text-3xl border-b border-gold-border/30 transition-colors ${
-                    activePage === page ? 'text-gold' : 'text-text-primary hover:text-gold'
+                  className={`block w-full text-left py-4 font-serif text-3xl border-b border-accent-border/30 transition-colors ${
+                    activePage === page ? 'text-accent' : 'text-text-primary hover:text-accent'
                   }`}
                 >
                   {page.charAt(0).toUpperCase() + page.slice(1)}
@@ -63,17 +63,17 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose, activePag
             </nav>
             
             {/* Footer Info */}
-            <div className="p-6 border-t border-gold-border space-y-4">
+            <div className="p-6 border-t border-accent-border space-y-4">
               <div className="flex items-center gap-3 text-text-secondary text-sm">
-                <MapPin size={16} className="text-gold" />
+                <MapPin size={16} className="text-accent" />
                 <span>Marrakech Medina, Morocco</span>
               </div>
               <div className="flex items-center gap-3 text-text-secondary text-sm">
-                <Clock size={16} className="text-gold" />
+                <Clock size={16} className="text-accent" />
                 <span>Open daily: 8AM - 10PM</span>
               </div>
               <div className="flex items-center gap-3 text-text-secondary text-sm">
-                <Phone size={16} className="text-gold" />
+                <Phone size={16} className="text-accent" />
                 <span>+212 600 000 000</span>
               </div>
             </div>
@@ -83,3 +83,4 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose, activePag
     </AnimatePresence>
   );
 };
+

@@ -42,3 +42,4 @@ export const CountUp: React.FC<CountUpProps> = ({ end, duration = 1.5, suffix = 
     </span>
   );
 };
+

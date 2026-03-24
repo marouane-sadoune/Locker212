@@ -38,11 +38,11 @@ export const Analytics: React.FC = () => {
         </div>
         
         {/* Metric Toggle */}
-        <div className="flex border border-gold-border p-0.5">
+        <div className="flex border border-accent-border p-0.5">
           <button
             onClick={() => setActiveMetric('bookings')}
             className={`px-4 py-2 text-[10px] tracking-widest uppercase transition-colors ${
-              activeMetric === 'bookings' ? 'bg-gold text-bg-base' : 'text-text-secondary hover:text-gold'
+              activeMetric === 'bookings' ? 'bg-accent text-bg-base' : 'text-text-secondary hover:text-accent'
             }`}
           >
             Bookings
@@ -50,7 +50,7 @@ export const Analytics: React.FC = () => {
           <button
             onClick={() => setActiveMetric('revenue')}
             className={`px-4 py-2 text-[10px] tracking-widest uppercase transition-colors ${
-              activeMetric === 'revenue' ? 'bg-gold text-bg-base' : 'text-text-secondary hover:text-gold'
+              activeMetric === 'revenue' ? 'bg-accent text-bg-base' : 'text-text-secondary hover:text-accent'
             }`}
           >
             Revenue
@@ -60,7 +60,7 @@ export const Analytics: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Chart */}
-        <div className="lg:col-span-3 border border-gold-border p-6 bg-bg-surface/30">
+        <div className="lg:col-span-3 border border-accent-border p-6 bg-bg-surface/30">
           <div className="flex items-end justify-between h-48 gap-4">
             {weekData.map((data, i) => {
               const value = activeMetric === 'bookings' ? data.bookings : data.revenue;
@@ -73,10 +73,10 @@ export const Analytics: React.FC = () => {
                     initial={{ height: 0 }}
                     animate={{ height: `${heightPercent}%` }}
                     transition={{ delay: i * 0.05, duration: 0.5, ease: 'easeOut' }}
-                    className="w-full bg-gold/20 border border-gold/40 relative group cursor-pointer hover:bg-gold/30 transition-colors"
+                    className="w-full bg-accent/20 border border-accent/40 relative group cursor-pointer hover:bg-accent/30 transition-colors"
                   >
                     {/* Tooltip */}
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-bg-base border border-gold-border text-xs text-text-primary whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-bg-base border border-accent-border text-xs text-text-primary whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
                       {activeMetric === 'bookings' ? `${data.bookings} bookings` : `${data.revenue} MAD`}
                     </div>
                   </motion.div>
@@ -89,9 +89,9 @@ export const Analytics: React.FC = () => {
 
         {/* Summary Cards */}
         <div className="space-y-4">
-          <div className="border border-gold-border p-5 bg-bg-surface/30">
+          <div className="border border-accent-border p-5 bg-bg-surface/30">
             <div className="flex items-center gap-2 mb-3">
-              <Users size={14} className="text-gold" />
+              <Users size={14} className="text-accent" />
               <span className="text-[10px] text-text-muted uppercase tracking-widest">Total Bookings</span>
             </div>
             <div className="font-serif text-3xl text-text-primary mb-1">{totalBookings}</div>
@@ -101,9 +101,9 @@ export const Analytics: React.FC = () => {
             </div>
           </div>
 
-          <div className="border border-gold-border p-5 bg-bg-surface/30">
+          <div className="border border-accent-border p-5 bg-bg-surface/30">
             <div className="flex items-center gap-2 mb-3">
-              <DollarSign size={14} className="text-gold" />
+              <DollarSign size={14} className="text-accent" />
               <span className="text-[10px] text-text-muted uppercase tracking-widest">Total Revenue</span>
             </div>
             <div className="font-serif text-3xl text-text-primary mb-1">{totalRevenue.toLocaleString()} <span className="text-lg">MAD</span></div>
@@ -113,9 +113,9 @@ export const Analytics: React.FC = () => {
             </div>
           </div>
 
-          <div className="border border-gold-border p-5 bg-bg-surface/30">
+          <div className="border border-accent-border p-5 bg-bg-surface/30">
             <div className="flex items-center gap-2 mb-3">
-              <Calendar size={14} className="text-gold" />
+              <Calendar size={14} className="text-accent" />
               <span className="text-[10px] text-text-muted uppercase tracking-widest">Daily Average</span>
             </div>
             <div className="font-serif text-3xl text-text-primary mb-1">{avgBookings}</div>
@@ -128,3 +128,4 @@ export const Analytics: React.FC = () => {
     </div>
   );
 };
+

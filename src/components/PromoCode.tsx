@@ -114,3 +114,4 @@ export const PromoCode: React.FC<PromoCodeProps> = ({ onApply, onRemove, applied
     </div>
   );
 };
+

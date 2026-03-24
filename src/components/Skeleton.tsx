@@ -34,7 +34,7 @@ export const TableSkeleton: React.FC = () => {
 
 export const CardSkeleton: React.FC = () => {
   return (
-    <div className="border border-gold-border p-6 space-y-4">
+    <div className="border border-accent-border p-6 space-y-4">
       <Skeleton className="h-4 w-24" />
       <Skeleton className="h-8 w-16" />
       <Skeleton className="h-3 w-32" />
@@ -51,3 +51,4 @@ export const LockerGridSkeleton: React.FC = () => {
     </div>
   );
 };
+

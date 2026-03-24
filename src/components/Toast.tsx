@@ -43,8 +43,8 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const colors = {
     success: 'border-success bg-success/10 text-success',
     error: 'border-danger bg-danger/10 text-[#C47A7A]',
-    warning: 'border-gold bg-gold/10 text-gold',
-    info: 'border-gold-border bg-bg-surface text-text-primary'
+    warning: 'border-accent bg-accent/10 text-accent',
+    info: 'border-accent-border bg-bg-surface text-text-primary'
   };
 
   return (
@@ -72,3 +72,4 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     </ToastContext.Provider>
   );
 };
+

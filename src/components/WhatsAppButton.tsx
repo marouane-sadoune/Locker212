@@ -19,7 +19,7 @@ export const WhatsAppButton: React.FC = () => {
       <MessageCircle className="w-6 h-6 text-white" fill="white" />
       
       {/* Tooltip */}
-      <div className="absolute left-full ml-3 px-3 py-2 bg-bg-surface border border-gold-border text-text-primary text-xs font-sans whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+      <div className="absolute left-full ml-3 px-3 py-2 bg-bg-surface border border-accent-border text-text-primary text-xs font-sans whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
         Chat with us
       </div>
       
@@ -28,3 +28,4 @@ export const WhatsAppButton: React.FC = () => {
     </motion.a>
   );
 };
+

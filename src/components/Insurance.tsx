@@ -16,13 +16,13 @@ export const Insurance: React.FC<InsuranceProps> = ({ selected, onSelect }) => {
         className={clsx(
           "p-5 border cursor-pointer transition-all duration-200 relative",
           selected === 'basic' 
-            ? "border-gold bg-gold-dim" 
-            : "border-gold-border hover:bg-bg-elevated"
+            ? "border-accent bg-accent-dim" 
+            : "border-accent-border hover:bg-bg-elevated"
         )}
       >
         {selected === 'basic' && (
           <div className="absolute top-3 right-3">
-            <Check size={16} className="text-gold" />
+            <Check size={16} className="text-accent" />
           </div>
         )}
         
@@ -31,7 +31,7 @@ export const Insurance: React.FC<InsuranceProps> = ({ selected, onSelect }) => {
           <div className="flex-grow">
             <div className="flex items-baseline justify-between mb-2">
               <h4 className="font-sans font-medium text-text-primary">Basic Coverage</h4>
-              <span className="text-gold font-serif text-lg">FREE</span>
+              <span className="text-accent font-serif text-lg">FREE</span>
             </div>
             <p className="text-text-secondary text-xs leading-relaxed mb-3">
               Standard premises liability coverage included with every booking.
@@ -56,42 +56,42 @@ export const Insurance: React.FC<InsuranceProps> = ({ selected, onSelect }) => {
         className={clsx(
           "p-5 border cursor-pointer transition-all duration-200 relative",
           selected === 'premium' 
-            ? "border-gold bg-gold-dim" 
-            : "border-gold-border hover:bg-bg-elevated"
+            ? "border-accent bg-accent-dim" 
+            : "border-accent-border hover:bg-bg-elevated"
         )}
       >
         {selected === 'premium' && (
           <div className="absolute top-3 right-3">
-            <Check size={16} className="text-gold" />
+            <Check size={16} className="text-accent" />
           </div>
         )}
 
         {/* Recommended badge */}
-        <div className="absolute -top-2.5 left-4 bg-gold px-2 py-0.5 text-[9px] text-bg-base uppercase tracking-widest">
+        <div className="absolute -top-2.5 left-4 bg-accent px-2 py-0.5 text-[9px] text-bg-base uppercase tracking-widest">
           Recommended
         </div>
         
         <div className="flex items-start gap-4 pt-1">
-          <ShieldCheck className="text-gold flex-shrink-0" size={24} />
+          <ShieldCheck className="text-accent flex-shrink-0" size={24} />
           <div className="flex-grow">
             <div className="flex items-baseline justify-between mb-2">
               <h4 className="font-sans font-medium text-text-primary">Premium Insurance</h4>
-              <span className="text-gold font-serif text-lg">+25 <span className="text-xs">MAD</span></span>
+              <span className="text-accent font-serif text-lg">+25 <span className="text-xs">MAD</span></span>
             </div>
             <p className="text-text-secondary text-xs leading-relaxed mb-3">
               Extended protection for high-value items and electronics.
             </p>
             <ul className="space-y-1 text-[11px] text-text-muted">
               <li className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-gold" />
+                <div className="w-1 h-1 bg-accent" />
                 Up to 20,000 MAD coverage
               </li>
               <li className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-gold" />
+                <div className="w-1 h-1 bg-accent" />
                 Electronics & valuables included
               </li>
               <li className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-gold" />
+                <div className="w-1 h-1 bg-accent" />
                 24-hour claim processing
               </li>
             </ul>
@@ -101,3 +101,4 @@ export const Insurance: React.FC<InsuranceProps> = ({ selected, onSelect }) => {
     </div>
   );
 };
+
