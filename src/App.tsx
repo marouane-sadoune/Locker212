@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { 
+import {
   Search, Plus, Minus, Check, MessageSquare, Download, Trash2,
   Menu, Briefcase, Shield, Star, ArrowRight, Share2, Printer,
   Copy, Calendar, Clock, User, Package, ChevronRight
@@ -67,13 +67,13 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
         scrolled ? "bg-bg-base/90 backdrop-blur-md py-4" : "bg-transparent py-6"
       )}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div 
+          <div
             className="text-accent font-sans font-medium text-[13px] tracking-[4px] cursor-pointer hover:text-accent-light transition-colors"
             onClick={() => setActivePage('home')}
           >
             DROP VAULT
           </div>
-          
+
           {/* Desktop Nav */}
           <div className="hidden md:flex gap-8">
             {['home', 'book', 'dashboard'].map((page) => (
@@ -87,7 +87,7 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
               >
                 {page}
                 {activePage === page && (
-                  <motion.div 
+                  <motion.div
                     layoutId="nav-underline"
                     className="absolute -bottom-1 left-0 w-full h-[1px] bg-accent"
                   />
@@ -174,7 +174,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
@@ -187,22 +187,22 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
               <span className="text-accent/80">Own your day.</span>
             </h1>
             <p className="font-sans font-light text-[16px] text-text-secondary leading-[1.8] max-w-md mb-8">
-              Secure, flexible locker storage for travelers who refuse to be slowed down. 
+              Secure, flexible locker storage for travelers who refuse to be slowed down.
               Drop off, explore, collect — all on your schedule.
             </p>
             <div className="flex flex-wrap gap-4">
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="btn-primary" 
+                className="btn-primary"
                 onClick={() => onBook()}
               >
                 RESERVE NOW
               </motion.button>
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="btn-ghost" 
+                className="btn-ghost"
                 onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 VIEW PRICING
@@ -226,7 +226,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -241,8 +241,8 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
                 { icon: Package, text: "3 Sizes · S · M · L" },
                 { icon: MessageSquare, text: "Instant WhatsApp confirmation" }
               ].map((item, i) => (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   initial={{ opacity: 0, x: 20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.4 + i * 0.1 }}
@@ -256,20 +256,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-[10px] text-text-muted uppercase tracking-widest">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-[1px] h-8 bg-gradient-to-b from-accent to-transparent"
-          />
-        </motion.div>
+
       </section>
 
       {/* Stats Strip */}
@@ -321,7 +308,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
           <p className="text-center text-text-secondary font-sans font-light mb-16 max-w-md mx-auto">
             Simple, transparent pricing with no hidden fees. Pay on arrival.
           </p>
-          
+
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Small */}
             <StaggerItem>
@@ -338,10 +325,10 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
                   <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Secure code lock</li>
                   <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Basic insurance included</li>
                 </ul>
-                <motion.button 
+                <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="btn-ghost w-full group-hover:border-accent" 
+                  className="btn-ghost w-full group-hover:border-accent"
                   onClick={() => onBook('SMALL')}
                 >
                   RESERVE SMALL
@@ -365,10 +352,10 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
                   <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Secure code lock</li>
                   <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Basic insurance included</li>
                 </ul>
-                <motion.button 
+                <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="btn-primary w-full" 
+                  className="btn-primary w-full"
                   onClick={() => onBook('STANDARD')}
                 >
                   RESERVE STANDARD
@@ -391,10 +378,10 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
                   <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Secure code lock</li>
                   <li className="flex items-center gap-3"><div className="w-1 h-1 bg-accent" /> Basic insurance included</li>
                 </ul>
-                <motion.button 
+                <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="btn-ghost w-full group-hover:border-accent" 
+                  className="btn-ghost w-full group-hover:border-accent"
                   onClick={() => onBook('LARGE')}
                 >
                   RESERVE LARGE
@@ -404,7 +391,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
           </StaggerContainer>
 
           {/* Multi-day pricing note */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -422,7 +409,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="font-serif text-3xl md:text-4xl text-center text-text-primary mb-4">Trusted by travelers from around the world</h2>
           <p className="text-center text-text-secondary font-sans font-light mb-16">Over 5,000 bags stored safely</p>
-          
+
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {[
               { name: "Sophie M.", country: "🇫🇷", quote: "Exactly what I needed between checkout and my flight.", rating: 5 },
@@ -474,7 +461,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             <p className="text-text-secondary font-sans font-light mb-10 max-w-md mx-auto">
               Book your secure locker in under 2 minutes. Receive instant WhatsApp confirmation.
             </p>
-            <motion.button 
+            <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-primary text-sm tracking-[3px] px-12 py-4"
@@ -491,7 +478,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div>
-              <div className="text-accent font-sans font-medium text-[13px] tracking-[4px] mb-4">DROP VAULT</div>
+              <div className="text-accent font-sans font-medium text-[13px] tracking-[4px] mb-4">Locker212</div>
               <p className="text-text-secondary font-sans font-light text-sm leading-relaxed">
                 Premium luggage storage in the heart of Marrakech. Leave your bags, own your day.
               </p>
@@ -543,7 +530,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
 
 const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?: (booking: Booking) => void }) => {
   const { showToast } = useToast();
-  
+
   const [formData, setFormData] = useState({
     name: '',
     whatsapp: '',
@@ -586,13 +573,13 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     const code = generateCode();
     setBookingCode(code);
-    
+
     if (onSuccess) {
       onSuccess({
         code,
@@ -605,7 +592,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
         whatsapp: formData.whatsapp
       });
     }
-    
+
     setIsSubmitting(false);
     setSubmitted(true);
     showToast('Booking confirmed successfully!', 'success');
@@ -669,7 +656,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
           </motion.div>
 
           {/* Booking code with QR */}
-          <motion.div 
+          <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
@@ -727,7 +714,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
             </div>
           </motion.div>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
@@ -736,11 +723,11 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
             📱 A confirmation has been sent to your WhatsApp.
           </motion.p>
 
-          <motion.button 
+          <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="btn-ghost" 
+            className="btn-ghost"
             onClick={() => {
               setSubmitted(false);
               setFormData({
@@ -768,7 +755,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
   return (
     <PageTransition>
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-32 md:pb-20">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
@@ -782,7 +769,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
           <div className="lg:col-span-7">
             <form onSubmit={handleSubmit} className="space-y-12">
               {/* Step 1 */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
@@ -794,13 +781,13 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       <User size={12} className="text-accent" />
                       Full Name
                     </label>
-                    <input 
+                    <input
                       required
-                      type="text" 
-                      placeholder="e.g. John Doe" 
+                      type="text"
+                      placeholder="e.g. John Doe"
                       className="input-standard"
                       value={formData.name}
-                      onChange={e => setFormData({...formData, name: e.target.value})}
+                      onChange={e => setFormData({ ...formData, name: e.target.value })}
                     />
                   </div>
                   <div className="flex flex-col gap-2">
@@ -808,13 +795,13 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       <MessageSquare size={12} className="text-accent" />
                       WhatsApp Number
                     </label>
-                    <input 
+                    <input
                       required
-                      type="tel" 
-                      placeholder="+212 6XX XXX XXX" 
+                      type="tel"
+                      placeholder="+212 6XX XXX XXX"
                       className="input-standard"
                       value={formData.whatsapp}
-                      onChange={e => setFormData({...formData, whatsapp: e.target.value})}
+                      onChange={e => setFormData({ ...formData, whatsapp: e.target.value })}
                     />
                     <span className="text-[10px] text-text-muted mt-1 italic">We'll send your confirmation here</span>
                   </div>
@@ -822,7 +809,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
               </motion.div>
 
               {/* Step 2 */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -830,11 +817,11 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                 <span className="section-title block mb-8">STEP 2 — CHOOSE YOUR SIZE</span>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {sizes.map((size) => (
-                    <motion.div 
+                    <motion.div
                       key={size.id}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      onClick={() => setFormData({...formData, size: size.id as LockerSize})}
+                      onClick={() => setFormData({ ...formData, size: size.id as LockerSize })}
                       className={cn(
                         "p-6 border cursor-pointer transition-all duration-300 relative group",
                         formData.size === size.id ? "border-accent bg-accent-dim" : "border-accent-border hover:bg-bg-elevated"
@@ -850,7 +837,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
               </motion.div>
 
               {/* Step 3 */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
@@ -862,12 +849,12 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       <Calendar size={12} className="text-accent" />
                       Drop-off date
                     </label>
-                    <input 
-                      type="date" 
-                      className="input-standard" 
+                    <input
+                      type="date"
+                      className="input-standard"
                       value={formData.date}
                       min={new Date().toISOString().split('T')[0]}
-                      onChange={e => setFormData({...formData, date: e.target.value})}
+                      onChange={e => setFormData({ ...formData, date: e.target.value })}
                     />
                   </div>
                   <div className="flex flex-col gap-2">
@@ -875,11 +862,11 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       <Clock size={12} className="text-accent" />
                       Approx. Time
                     </label>
-                    <input 
-                      type="time" 
-                      className="input-standard" 
+                    <input
+                      type="time"
+                      className="input-standard"
                       value={formData.time}
-                      onChange={e => setFormData({...formData, time: e.target.value})}
+                      onChange={e => setFormData({ ...formData, time: e.target.value })}
                     />
                   </div>
                   <div className="flex flex-col gap-2">
@@ -888,17 +875,17 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       Number of Bags
                     </label>
                     <div className="flex items-center border border-accent-border h-[46px]">
-                      <button 
+                      <button
                         type="button"
-                        onClick={() => setFormData({...formData, bags: Math.max(1, formData.bags - 1)})}
+                        onClick={() => setFormData({ ...formData, bags: Math.max(1, formData.bags - 1) })}
                         className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-accent border-r border-accent-border transition-colors"
                       >
                         <Minus size={14} />
                       </button>
                       <div className="flex-grow text-center font-sans text-sm">{formData.bags}</div>
-                      <button 
+                      <button
                         type="button"
-                        onClick={() => setFormData({...formData, bags: Math.min(4, formData.bags + 1)})}
+                        onClick={() => setFormData({ ...formData, bags: Math.min(4, formData.bags + 1) })}
                         className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-accent border-l border-accent-border transition-colors"
                       >
                         <Plus size={14} />
@@ -908,17 +895,17 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                   <div className="flex flex-col gap-2">
                     <label className="text-text-secondary text-[10px] uppercase tracking-widest">Duration (Days)</label>
                     <div className="flex items-center border border-accent-border h-[46px]">
-                      <button 
+                      <button
                         type="button"
-                        onClick={() => setFormData({...formData, days: Math.max(1, formData.days - 1)})}
+                        onClick={() => setFormData({ ...formData, days: Math.max(1, formData.days - 1) })}
                         className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-accent border-r border-accent-border transition-colors"
                       >
                         <Minus size={14} />
                       </button>
                       <div className="flex-grow text-center font-sans text-sm">{formData.days}</div>
-                      <button 
+                      <button
                         type="button"
-                        onClick={() => setFormData({...formData, days: Math.min(30, formData.days + 1)})}
+                        onClick={() => setFormData({ ...formData, days: Math.min(30, formData.days + 1) })}
                         className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-accent border-l border-accent-border transition-colors"
                       >
                         <Plus size={14} />
@@ -932,41 +919,41 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
               </motion.div>
 
               {/* Step 4 - Insurance */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
                 <span className="section-title block mb-8">STEP 4 — INSURANCE</span>
-                <Insurance 
+                <Insurance
                   selected={formData.insurance}
-                  onSelect={(type) => setFormData({...formData, insurance: type})}
+                  onSelect={(type) => setFormData({ ...formData, insurance: type })}
                 />
               </motion.div>
 
               {/* Step 5 */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
                 <span className="section-title block mb-8">STEP 5 — ADDITIONAL NOTES</span>
-                <textarea 
+                <textarea
                   rows={3}
                   placeholder="e.g. 2 suitcases and 1 backpack, arriving at 10am..."
                   className="input-standard w-full resize-none"
                   value={formData.notes}
-                  onChange={e => setFormData({...formData, notes: e.target.value})}
+                  onChange={e => setFormData({ ...formData, notes: e.target.value })}
                 />
               </motion.div>
 
-              <motion.button 
+              <motion.button
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
-                type="submit" 
+                type="submit"
                 disabled={isSubmitting}
                 className="btn-primary w-full py-5 text-sm tracking-[3px] disabled:opacity-70 flex items-center justify-center gap-3"
               >
@@ -990,7 +977,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
           </div>
 
           {/* Order Summary */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
@@ -1019,7 +1006,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                   <span className="text-text-secondary">Insurance</span>
                   <span className="text-text-primary capitalize">{formData.insurance}</span>
                 </div>
-                
+
                 {/* Promo Code */}
                 <div className="pt-4">
                   <PromoCode
@@ -1062,7 +1049,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                     </div>
                   )}
                 </div>
-                
+
                 <div className="pt-4 flex justify-between items-baseline border-t border-accent-border/30">
                   <span className="text-accent section-title">TOTAL</span>
                   <div className="text-right">
@@ -1087,12 +1074,12 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
 
 const Dashboard = () => {
   const { showToast } = useToast();
-  
+
   const [lockers, setLockers] = useState<Locker[]>(
     Array.from({ length: 24 }, (_, i) => ({
       id: (i + 1).toString().padStart(2, '0'),
-      status: [3, 4, 7, 9, 15, 18, 21].includes(i + 1) ? 'OCCUPIED' : 
-              [12, 16, 22].includes(i + 1) ? 'RESERVED' : 'FREE'
+      status: [3, 4, 7, 9, 15, 18, 21].includes(i + 1) ? 'OCCUPIED' :
+        [12, 16, 22].includes(i + 1) ? 'RESERVED' : 'FREE'
     }))
   );
 
@@ -1122,7 +1109,7 @@ const Dashboard = () => {
 
   const handleLockerStatusChange = (newStatus: LockerStatus) => {
     if (selectedLocker) {
-      setLockers(prev => prev.map(l => 
+      setLockers(prev => prev.map(l =>
         l.id === selectedLocker.id ? { ...l, status: newStatus } : l
       ));
       setSelectedLocker({ ...selectedLocker, status: newStatus });
@@ -1142,7 +1129,7 @@ const Dashboard = () => {
       'Code,Guest Name,Size,Locker,Date,Status',
       ...bookings.map(b => `${b.code},${b.name},${b.size},${b.locker},${b.date},${b.status}`)
     ].join('\n');
-    
+
     const blob = new Blob([csv], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -1168,7 +1155,7 @@ const Dashboard = () => {
             <span className="section-title">VAULT OVERVIEW</span>
             <h1 className="font-serif text-[36px] md:text-[42px] text-text-primary mt-2">Manager Dashboard</h1>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -1249,8 +1236,8 @@ const Dashboard = () => {
             <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
               <div className="relative flex-grow md:flex-grow-0">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   placeholder="Search by name or code..."
                   className="input-standard pl-10 h-10 text-xs w-full md:w-64"
                   value={search}
@@ -1289,12 +1276,12 @@ const Dashboard = () => {
               <tbody>
                 <AnimatePresence>
                   {filteredBookings.map((b, i) => (
-                    <motion.tr 
+                    <motion.tr
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: 10 }}
                       transition={{ delay: i * 0.03 }}
-                      key={b.code} 
+                      key={b.code}
                       onClick={() => setSelectedBooking(b)}
                       className="border-b border-white/5 hover:bg-bg-elevated transition-colors cursor-pointer"
                     >
@@ -1334,8 +1321,8 @@ const Dashboard = () => {
             { icon: MessageSquare, title: 'SEND WHATSAPP', sub: 'Message all active guests', onClick: () => showToast('WhatsApp integration coming soon', 'info') },
             { icon: Trash2, title: 'CLEAR COMPLETED', sub: 'Remove completed bookings', onClick: handleClearCompleted, danger: true },
           ].map((action, i) => (
-            <motion.div 
-              key={i} 
+            <motion.div
+              key={i}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 + i * 0.1 }}
@@ -1405,7 +1392,7 @@ const Dashboard = () => {
             </div>
 
             <div className="flex gap-3">
-              <button 
+              <button
                 className="btn-ghost flex-1 py-3"
                 onClick={() => {
                   showToast('WhatsApp message sent!', 'success');
@@ -1415,10 +1402,10 @@ const Dashboard = () => {
                 <MessageSquare size={14} className="inline mr-2" />
                 MESSAGE
               </button>
-              <button 
+              <button
                 className="btn-primary flex-1 py-3"
                 onClick={() => {
-                  setBookings(prev => prev.map(b => 
+                  setBookings(prev => prev.map(b =>
                     b.code === selectedBooking.code ? { ...b, status: 'COMPLETED' } : b
                   ));
                   showToast('Booking marked as completed', 'success');
@@ -1455,7 +1442,7 @@ function AppContent() {
     <div className="min-h-screen bg-bg-base selection:bg-accent/30 selection:text-white">
       <ScrollProgress />
       <Navbar activePage={activePage} setActivePage={setActivePage} />
-      
+
       <main>
         <AnimatePresence mode="wait">
           {activePage === 'home' && <Home key="home" onBook={handleBookingStart} />}
