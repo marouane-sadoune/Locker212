@@ -164,9 +164,9 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section ref={heroRef} className="min-h-screen pt-32 lg:pt-0 flex items-center relative overflow-hidden">
+      <section ref={heroRef} className="min-h-screen pt-32 lg:pt-24 flex items-center relative overflow-hidden">
         {/* Animated background grid */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
           <div className="absolute inset-0" style={{
             backgroundImage: `linear-gradient(var(--color-accent) 1px, transparent 1px), linear-gradient(90deg, var(--color-accent) 1px, transparent 1px)`,
             backgroundSize: '60px 60px'
