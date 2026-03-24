@@ -4,10 +4,11 @@
   --color-bg-base: #080808;
   --color-bg-surface: #111111;
   --color-bg-elevated: #1A1A1A;
-  --color-gold: #C9A84C;
-  --color-gold-light: #E8C96A;
-  --color-gold-dim: rgba(201,168,76,0.12);
-  --color-gold-border: rgba(201,168,76,0.25);
+  --color-accent: #F97316;
+  --color-accent-light: #FB923C;
+  --color-accent-dark: #EA580C;
+  --color-accent-dim: rgba(249, 115, 22, 0.12);
+  --color-accent-border: rgba(249, 115, 22, 0.25);
   --color-text-primary: #F0EDE6;
   --color-text-secondary: #999990;
   --color-text-muted: #555550;
@@ -35,17 +36,17 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gold-border);
+  background: var(--color-accent-border);
   border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gold);
+  background: var(--color-accent);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(201,168,76,0.3);
+  background: rgba(249, 115, 22, 0.3);
   color: white;
 }
 
@@ -67,7 +68,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     display: none !important;
   }
   
-  .border-gold {
+  .border-accent {
     border-color: #333 !important;
   }
 }
@@ -83,15 +84,15 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 @layer components {
   .btn-primary {
-    @apply bg-gold text-[#080808] px-9 py-3.5 font-sans font-medium text-[12px] tracking-[2px] uppercase transition-colors duration-200 hover:bg-gold-light;
+    @apply bg-accent text-[#080808] px-9 py-3.5 font-sans font-medium text-[12px] tracking-[2px] uppercase transition-colors duration-200 hover:bg-accent-light;
   }
   
   .btn-ghost {
-    @apply bg-transparent text-gold border border-gold-border px-9 py-3.5 font-sans font-medium text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:border-gold hover:bg-gold-dim;
+    @apply bg-transparent text-accent border border-accent-border px-9 py-3.5 font-sans font-medium text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:border-accent hover:bg-accent-dim;
   }
 
   .section-title {
-    @apply uppercase tracking-[3px] text-[11px] text-gold font-sans font-normal;
+    @apply uppercase tracking-[3px] text-[11px] text-accent font-sans font-normal;
   }
 
   .heading-large {
@@ -99,18 +100,18 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   }
 
   .input-standard {
-    @apply bg-bg-elevated border border-gold-border text-text-primary px-4 py-3 font-sans text-sm focus:outline-none focus:ring-1 focus:ring-gold;
+    @apply bg-bg-elevated border border-accent-border text-text-primary px-4 py-3 font-sans text-sm focus:outline-none focus:ring-1 focus:ring-accent;
   }
 }
 
 .sharp-border {
-  border: 1px solid var(--color-gold-border);
+  border: 1px solid var(--color-accent-border);
 }
 
-.gold-divider {
-  border-bottom: 1px solid var(--color-gold-border);
+.accent-divider {
+  border-bottom: 1px solid var(--color-accent-border);
 }
 
-.gold-divider-v {
-  border-right: 1px solid var(--color-gold-border);
+.accent-divider-v {
+  border-right: 1px solid var(--color-accent-border);
 }
