@@ -63,12 +63,12 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
   return (
     <>
       <nav className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-gold-border",
+        "fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-accent-border",
         scrolled ? "bg-bg-base/90 backdrop-blur-md py-4" : "bg-transparent py-6"
       )}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div 
-            className="text-gold font-sans font-medium text-[13px] tracking-[4px] cursor-pointer hover:text-gold-light transition-colors"
+            className="text-gold font-sans font-medium text-[13px] tracking-[4px] cursor-pointer hover:text-accent-light transition-colors"
             onClick={() => setActivePage('home')}
           >
             DROP VAULT
@@ -99,7 +99,7 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden text-gold hover:text-gold-light transition-colors"
+            className="md:hidden text-gold hover:text-accent-light transition-colors"
           >
             <Menu size={24} />
           </button>
@@ -210,13 +210,13 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             </div>
 
             {/* Quick trust indicators */}
-            <div className="flex items-center gap-6 mt-10 pt-10 border-t border-gold-border/30">
+            <div className="flex items-center gap-6 mt-10 pt-10 border-t border-accent-border/30">
               <div className="flex items-center gap-2">
                 <Shield size={16} className="text-gold" />
                 <span className="text-text-secondary text-xs">Insured Storage</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star size={16} className="text-gold" fill="#C9A84C" />
+                <Star size={16} className="text-gold" fill="#F97316" />
                 <span className="text-text-secondary text-xs">4.9/5 Rating</span>
               </div>
               <div className="flex items-center gap-2">
@@ -235,7 +235,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             <div className="font-serif text-[220px] text-gold/5 leading-none absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none">
               24
             </div>
-            <div className="space-y-0 w-full max-w-[300px] border-y border-gold-border bg-bg-surface/30 backdrop-blur-sm px-6">
+            <div className="space-y-0 w-full max-w-[300px] border-y border-accent-border bg-bg-surface/30 backdrop-blur-sm px-6">
               {[
                 { icon: Briefcase, text: "24 Lockers available" },
                 { icon: Package, text: "3 Sizes · S · M · L" },
@@ -246,7 +246,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
                   initial={{ opacity: 0, x: 20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.4 + i * 0.1 }}
-                  className={cn("py-5 font-sans font-light text-text-secondary text-sm flex items-center gap-3", i < 2 && "border-b border-gold-border")}
+                  className={cn("py-5 font-sans font-light text-text-secondary text-sm flex items-center gap-3", i < 2 && "border-b border-accent-border")}
                 >
                   <item.icon size={16} className="text-gold" />
                   {item.text}
@@ -273,7 +273,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
       </section>
 
       {/* Stats Strip */}
-      <section className="bg-bg-surface border-y border-gold-border py-8">
+      <section className="bg-bg-surface border-y border-accent-border py-8">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { val: 24, label: "Secure Lockers", suffix: "" },
@@ -281,7 +281,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             { val: 7, label: "Days a Week", suffix: "" },
             { val: 100, label: "Satisfaction", suffix: "%" }
           ].map((item, i) => (
-            <div key={i} className={cn("text-center px-4", i !== 3 && "md:border-r md:border-gold-border")}>
+            <div key={i} className={cn("text-center px-4", i !== 3 && "md:border-r md:border-accent-border")}>
               <div className="font-serif text-[42px] text-text-primary leading-tight">
                 <CountUp end={item.val} suffix={item.suffix} />
               </div>
@@ -295,13 +295,13 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
       <section className="py-20 lg:py-32 bg-bg-base">
         <div className="max-w-7xl mx-auto px-6">
           <span className="section-title block text-center mb-16">HOW IT WORKS</span>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-gold-border">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-accent-border">
             {[
               { num: "01", title: "Choose your size", desc: "Pick from Small, Medium or Large depending on what you're carrying." },
               { num: "02", title: "Drop your bags", desc: "Hand over your bags and receive your unique locker code instantly." },
               { num: "03", title: "Explore the city", desc: "Come back anytime during opening hours to collect." }
             ].map((step, i) => (
-              <StaggerItem key={i} className={cn("p-10 relative group hover:bg-bg-elevated transition-colors", i !== 2 && "md:border-r md:border-gold-border border-b md:border-b-0 border-gold-border")}>
+              <StaggerItem key={i} className={cn("p-10 relative group hover:bg-bg-elevated transition-colors", i !== 2 && "md:border-r md:border-accent-border border-b md:border-b-0 border-accent-border")}>
                 <div className="font-serif text-6xl text-gold/10 group-hover:text-gold/20 transition-colors mb-6">{step.num}</div>
                 <h3 className="font-serif text-2xl text-text-primary mb-4">{step.title}</h3>
                 <p className="font-sans font-light text-sm text-text-secondary leading-relaxed">{step.desc}</p>
@@ -325,7 +325,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Small */}
             <StaggerItem>
-              <div className="border border-gold-border p-10 flex flex-col h-full bg-bg-base hover:bg-bg-elevated transition-colors group">
+              <div className="border border-accent-border p-10 flex flex-col h-full bg-bg-base hover:bg-bg-elevated transition-colors group">
                 <span className="section-title mb-2">SMALL</span>
                 <p className="font-sans font-light text-text-secondary text-sm mb-8">Backpack · Handbag · Day bag</p>
                 <div className="mb-8">
@@ -352,7 +352,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             {/* Standard */}
             <StaggerItem>
               <div className="border-2 border-gold relative p-10 flex flex-col h-full bg-bg-base hover:bg-bg-elevated transition-colors group">
-                <div className="absolute top-0 right-0 bg-gold-dim text-gold text-[10px] px-3 py-1 font-sans font-medium uppercase tracking-widest">MOST REQUESTED</div>
+                <div className="absolute top-0 right-0 bg-accent-dim text-gold text-[10px] px-3 py-1 font-sans font-medium uppercase tracking-widest">MOST REQUESTED</div>
                 <span className="section-title mb-2">STANDARD</span>
                 <p className="font-sans font-light text-text-secondary text-sm mb-8">Carry-on · Cabin luggage · Medium bag</p>
                 <div className="mb-8">
@@ -378,7 +378,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
 
             {/* Large */}
             <StaggerItem>
-              <div className="border border-gold-border p-10 flex flex-col h-full bg-bg-base hover:bg-bg-elevated transition-colors group">
+              <div className="border border-accent-border p-10 flex flex-col h-full bg-bg-base hover:bg-bg-elevated transition-colors group">
                 <span className="section-title mb-2">LARGE</span>
                 <p className="font-sans font-light text-text-secondary text-sm mb-8">Full-size luggage · Big backpack</p>
                 <div className="mb-8">
@@ -418,7 +418,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
       </section>
 
       {/* Trust / Reviews */}
-      <section className="py-20 lg:py-32 bg-bg-base border-y border-gold-border overflow-hidden">
+      <section className="py-20 lg:py-32 bg-bg-base border-y border-accent-border overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="font-serif text-3xl md:text-4xl text-center text-text-primary mb-4">Trusted by travelers from around the world</h2>
           <p className="text-center text-text-secondary font-sans font-light mb-16">Over 5,000 bags stored safely</p>
@@ -432,11 +432,11 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
               { name: "Tyler B.", country: "🇺🇸", quote: "Would definitely use again on my next trip to Morocco.", rating: 5 }
             ].map((review, i) => (
               <StaggerItem key={i}>
-                <div className="border border-gold-border p-6 bg-bg-surface flex flex-col justify-between h-full hover:border-gold transition-colors">
+                <div className="border border-accent-border p-6 bg-bg-surface flex flex-col justify-between h-full hover:border-gold transition-colors">
                   <div>
                     <div className="flex gap-0.5 mb-4">
                       {Array.from({ length: review.rating }).map((_, j) => (
-                        <Star key={j} size={12} className="text-gold" fill="#C9A84C" />
+                        <Star key={j} size={12} className="text-gold" fill="#F97316" />
                       ))}
                     </div>
                     <p className="font-sans font-light text-sm text-text-secondary italic leading-relaxed">"{review.quote}"</p>
@@ -459,7 +459,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
       <FAQ />
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-bg-surface border-t border-gold-border">
+      <section className="py-20 lg:py-32 bg-bg-surface border-t border-accent-border">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -487,7 +487,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-bg-base border-t border-gold-border">
+      <footer className="py-12 bg-bg-base border-t border-accent-border">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div>
@@ -521,7 +521,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
               </ul>
             </div>
           </div>
-          <div className="pt-8 border-t border-gold-border/30 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="pt-8 border-t border-accent-border/30 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-text-muted font-sans font-light text-[10px] tracking-widest uppercase">
               © 2025 DropVault · All rights reserved
             </div>
@@ -534,7 +534,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
       </footer>
 
       {/* Mobile sticky CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-bg-base/95 backdrop-blur-md border-t border-gold-border z-40">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-bg-base/95 backdrop-blur-md border-t border-accent-border z-40">
         <button className="btn-primary w-full" onClick={() => onBook()}>RESERVE NOW</button>
       </div>
     </PageTransition>
@@ -646,7 +646,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
               <svg className="w-full h-full" viewBox="0 0 100 100">
                 <motion.circle
                   cx="50" cy="50" r="45"
-                  stroke="#C9A84C"
+                  stroke="#F97316"
                   strokeWidth="2"
                   fill="none"
                   initial={{ pathLength: 0 }}
@@ -673,7 +673,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="border border-gold p-8 mb-8 bg-gold-dim/5 max-w-md w-full"
+            className="border border-gold p-8 mb-8 bg-accent-dim/5 max-w-md w-full"
           >
             <div className="flex flex-col md:flex-row items-center gap-6">
               <QRCode value={bookingCode} size={100} />
@@ -681,13 +681,13 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                 <div className="text-text-muted text-[10px] uppercase tracking-[4px] mb-2">Booking Code</div>
                 <div className="font-mono text-[28px] md:text-[32px] text-gold tracking-[6px] uppercase mb-4">{bookingCode}</div>
                 <div className="flex gap-2 justify-center md:justify-start">
-                  <button onClick={handleCopyCode} className="p-2 border border-gold-border hover:border-gold transition-colors" title="Copy code">
+                  <button onClick={handleCopyCode} className="p-2 border border-accent-border hover:border-gold transition-colors" title="Copy code">
                     <Copy size={16} className="text-gold" />
                   </button>
-                  <button onClick={handlePrint} className="p-2 border border-gold-border hover:border-gold transition-colors" title="Print">
+                  <button onClick={handlePrint} className="p-2 border border-accent-border hover:border-gold transition-colors" title="Print">
                     <Printer size={16} className="text-gold" />
                   </button>
-                  <button onClick={handleShare} className="p-2 border border-gold-border hover:border-gold transition-colors" title="Share">
+                  <button onClick={handleShare} className="p-2 border border-accent-border hover:border-gold transition-colors" title="Share">
                     <Share2 size={16} className="text-gold" />
                   </button>
                 </div>
@@ -700,7 +700,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="border border-gold-border p-6 mb-8 max-w-md w-full text-left"
+            className="border border-accent-border p-6 mb-8 max-w-md w-full text-left"
           >
             <div className="section-title mb-4">BOOKING DETAILS</div>
             <div className="space-y-3 text-sm font-sans">
@@ -720,7 +720,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                 <span className="text-text-secondary">Duration</span>
                 <span className="text-text-primary">{formData.days} day{formData.days > 1 ? 's' : ''}</span>
               </div>
-              <div className="flex justify-between pt-3 border-t border-gold-border/30">
+              <div className="flex justify-between pt-3 border-t border-accent-border/30">
                 <span className="text-gold">Total</span>
                 <span className="text-gold font-serif text-lg">{total} MAD</span>
               </div>
@@ -837,7 +837,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       onClick={() => setFormData({...formData, size: size.id as LockerSize})}
                       className={cn(
                         "p-6 border cursor-pointer transition-all duration-300 relative group",
-                        formData.size === size.id ? "border-gold bg-gold-dim" : "border-gold-border hover:bg-bg-elevated"
+                        formData.size === size.id ? "border-gold bg-accent-dim" : "border-accent-border hover:bg-bg-elevated"
                       )}
                     >
                       {formData.size === size.id && <Check className="absolute top-4 right-4 text-gold w-4 h-4" />}
@@ -887,11 +887,11 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       <Package size={12} className="text-gold" />
                       Number of Bags
                     </label>
-                    <div className="flex items-center border border-gold-border h-[46px]">
+                    <div className="flex items-center border border-accent-border h-[46px]">
                       <button 
                         type="button"
                         onClick={() => setFormData({...formData, bags: Math.max(1, formData.bags - 1)})}
-                        className="w-12 h-full flex items-center justify-center hover:bg-gold-dim text-gold border-r border-gold-border transition-colors"
+                        className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-gold border-r border-accent-border transition-colors"
                       >
                         <Minus size={14} />
                       </button>
@@ -899,7 +899,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       <button 
                         type="button"
                         onClick={() => setFormData({...formData, bags: Math.min(4, formData.bags + 1)})}
-                        className="w-12 h-full flex items-center justify-center hover:bg-gold-dim text-gold border-l border-gold-border transition-colors"
+                        className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-gold border-l border-accent-border transition-colors"
                       >
                         <Plus size={14} />
                       </button>
@@ -907,11 +907,11 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-text-secondary text-[10px] uppercase tracking-widest">Duration (Days)</label>
-                    <div className="flex items-center border border-gold-border h-[46px]">
+                    <div className="flex items-center border border-accent-border h-[46px]">
                       <button 
                         type="button"
                         onClick={() => setFormData({...formData, days: Math.max(1, formData.days - 1)})}
-                        className="w-12 h-full flex items-center justify-center hover:bg-gold-dim text-gold border-r border-gold-border transition-colors"
+                        className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-gold border-r border-accent-border transition-colors"
                       >
                         <Minus size={14} />
                       </button>
@@ -919,7 +919,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                       <button 
                         type="button"
                         onClick={() => setFormData({...formData, days: Math.min(30, formData.days + 1)})}
-                        className="w-12 h-full flex items-center justify-center hover:bg-gold-dim text-gold border-l border-gold-border transition-colors"
+                        className="w-12 h-full flex items-center justify-center hover:bg-accent-dim text-gold border-l border-accent-border transition-colors"
                       >
                         <Plus size={14} />
                       </button>
@@ -996,26 +996,26 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
             transition={{ delay: 0.3 }}
             className="lg:col-span-5 lg:sticky lg:top-32"
           >
-            <div className="border-l-[3px] border-gold border border-gold-border p-8 bg-bg-surface/50">
+            <div className="border-l-[3px] border-gold border border-accent-border p-8 bg-bg-surface/50">
               <span className="section-title block mb-6">RESERVATION SUMMARY</span>
               <div className="space-y-4 font-sans text-sm">
-                <div className="flex justify-between items-center py-2 border-b border-gold-border/20">
+                <div className="flex justify-between items-center py-2 border-b border-accent-border/20">
                   <span className="text-text-secondary">Size</span>
                   <span className="text-text-primary uppercase tracking-widest text-[11px] font-medium">{formData.size}</span>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-gold-border/20">
+                <div className="flex justify-between items-center py-2 border-b border-accent-border/20">
                   <span className="text-text-secondary">Bags</span>
                   <span className="text-text-primary">{formData.bags}</span>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-gold-border/20">
+                <div className="flex justify-between items-center py-2 border-b border-accent-border/20">
                   <span className="text-text-secondary">Date</span>
                   <span className="text-text-primary">{new Date(formData.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</span>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-gold-border/20">
+                <div className="flex justify-between items-center py-2 border-b border-accent-border/20">
                   <span className="text-text-secondary">Duration</span>
                   <span className="text-text-primary">{formData.days} Day{formData.days > 1 ? 's' : ''}</span>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-gold-border/20">
+                <div className="flex justify-between items-center py-2 border-b border-accent-border/20">
                   <span className="text-text-secondary">Insurance</span>
                   <span className="text-text-primary capitalize">{formData.insurance}</span>
                 </div>
@@ -1038,7 +1038,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                 </div>
 
                 {/* Pricing Breakdown */}
-                <div className="pt-6 border-t border-gold-border/30 space-y-2">
+                <div className="pt-6 border-t border-accent-border/30 space-y-2">
                   <div className="flex justify-between text-text-secondary text-xs">
                     <span>Base ({basePrice} MAD × {formData.days} day{formData.days > 1 ? 's' : ''})</span>
                     <span>{basePrice * formData.days} MAD</span>
@@ -1063,7 +1063,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                   )}
                 </div>
                 
-                <div className="pt-4 flex justify-between items-baseline border-t border-gold-border/30">
+                <div className="pt-4 flex justify-between items-baseline border-t border-accent-border/30">
                   <span className="text-gold section-title">TOTAL</span>
                   <div className="text-right">
                     <span className="font-serif text-[32px] text-gold">{total}</span>
@@ -1071,7 +1071,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                   </div>
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-gold-border/30">
+                <div className="mt-8 pt-8 border-t border-accent-border/30">
                   <p className="text-[11px] text-text-muted leading-relaxed italic">
                     * Payment is made on arrival in cash or via mobile payment.
                   </p>
@@ -1160,7 +1160,7 @@ const Dashboard = () => {
   return (
     <PageTransition>
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
-        <header className="flex flex-col md:flex-row justify-between items-baseline mb-8 pb-6 border-b border-gold-border gap-4">
+        <header className="flex flex-col md:flex-row justify-between items-baseline mb-8 pb-6 border-b border-accent-border gap-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -1187,7 +1187,7 @@ const Dashboard = () => {
             { label: 'TOTAL', value: metrics.TOTAL, color: 'text-text-primary', trend: 'Capacity stable', icon: '—' }
           ].map((m, i) => (
             <StaggerItem key={i}>
-              <div className="border border-gold-border p-6 md:p-8 bg-bg-surface/30 hover:bg-bg-elevated transition-colors">
+              <div className="border border-accent-border p-6 md:p-8 bg-bg-surface/30 hover:bg-bg-elevated transition-colors">
                 <div className="section-title text-[10px] text-text-secondary mb-4">{m.label}</div>
                 <div className={cn("font-serif text-4xl md:text-5xl mb-2", m.color)}>
                   <CountUp end={m.value} duration={1} />
@@ -1257,7 +1257,7 @@ const Dashboard = () => {
                   onChange={e => setSearch(e.target.value)}
                 />
               </div>
-              <div className="flex border border-gold-border h-10 p-0.5">
+              <div className="flex border border-accent-border h-10 p-0.5">
                 {['ALL', 'ACTIVE', 'PENDING', 'COMPLETED'].map(f => (
                   <button
                     key={f}
@@ -1277,7 +1277,7 @@ const Dashboard = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-left font-sans border-collapse min-w-[600px]">
               <thead>
-                <tr className="border-b border-gold-border">
+                <tr className="border-b border-accent-border">
                   <th className="py-4 text-[10px] uppercase tracking-[2px] text-text-muted font-medium">Code</th>
                   <th className="py-4 text-[10px] uppercase tracking-[2px] text-text-muted font-medium">Guest Name</th>
                   <th className="py-4 text-[10px] uppercase tracking-[2px] text-text-muted font-medium">Size</th>
@@ -1340,14 +1340,14 @@ const Dashboard = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 + i * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="border border-gold-border p-6 bg-bg-surface/30 group cursor-pointer hover:bg-bg-elevated transition-all"
+              className="border border-accent-border p-6 bg-bg-surface/30 group cursor-pointer hover:bg-bg-elevated transition-all"
               onClick={action.onClick}
             >
               <div className="flex justify-between items-start mb-4">
                 <action.icon size={20} className={cn(action.danger ? "text-danger" : "text-gold")} />
                 <span className={cn(
                   "section-title border px-3 py-1 transition-colors",
-                  action.danger ? "border-danger/30 text-danger group-hover:bg-danger/10" : "border-gold-border text-gold group-hover:bg-gold-dim"
+                  action.danger ? "border-danger/30 text-danger group-hover:bg-danger/10" : "border-accent-border text-gold group-hover:bg-accent-dim"
                 )}>
                   RUN
                 </span>
@@ -1376,8 +1376,8 @@ const Dashboard = () => {
       >
         {selectedBooking && (
           <div className="space-y-6">
-            <div className="flex items-center gap-4 p-4 bg-bg-elevated border border-gold-border/30">
-              <div className="w-12 h-12 bg-gold-dim flex items-center justify-center text-2xl">
+            <div className="flex items-center gap-4 p-4 bg-bg-elevated border border-accent-border/30">
+              <div className="w-12 h-12 bg-accent-dim flex items-center justify-center text-2xl">
                 {selectedBooking.country}
               </div>
               <div>
@@ -1387,11 +1387,11 @@ const Dashboard = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 bg-bg-elevated border border-gold-border/30">
+              <div className="p-4 bg-bg-elevated border border-accent-border/30">
                 <div className="text-[10px] text-text-muted uppercase tracking-widest mb-1">Date</div>
                 <div className="text-text-primary">{selectedBooking.date}</div>
               </div>
-              <div className="p-4 bg-bg-elevated border border-gold-border/30">
+              <div className="p-4 bg-bg-elevated border border-accent-border/30">
                 <div className="text-[10px] text-text-muted uppercase tracking-widest mb-1">Status</div>
                 <div className={cn(
                   "uppercase text-sm tracking-widest",
