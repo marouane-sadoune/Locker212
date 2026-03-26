@@ -24,8 +24,8 @@ export default {
         'warning': '#7C6A2A',
       },
       fontFamily: {
-        serif: ['Syne', 'sans-serif'],
-        sans: ['"DM Sans"', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'serif'],
+        sans: ['Jost', 'sans-serif'],
       },
       borderRadius: {
         'none': '0px',
