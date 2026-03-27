@@ -495,7 +495,7 @@ const Home = ({ onBook }: { onBook: (size?: LockerSize) => void }) => {
             <div>
               <h4 className="section-title mb-4">CONTACT</h4>
               <ul className="space-y-2 text-text-secondary text-sm font-sans font-light">
-                <li>WhatsApp: <span className="text-accent">+212 600 000 000</span></li>
+                <li>WhatsApp: <span className="text-accent">+212 753-207449</span></li>
                 <li>Email: hello@dropvault.ma</li>
                 <li>Marrakech Medina, Morocco</li>
               </ul>
@@ -798,7 +798,7 @@ const Book = ({ initialSize, onSuccess }: { initialSize?: LockerSize; onSuccess?
                     <input
                       required
                       type="tel"
-                      placeholder="+212 6XX XXX XXX"
+                      placeholder="+212 753-207449"
                       className="input-standard"
                       value={formData.whatsapp}
                       onChange={e => setFormData({ ...formData, whatsapp: e.target.value })}
